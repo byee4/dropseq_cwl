@@ -1,0 +1,8 @@
+#!/usr/bin/env TagReadWithGeneExon.cwl
+
+input: 
+  class: File
+  path: inputs/Barnayard_Original_S3_R-_001.small.tagged1-12.tagged13-20.filtered.trimmed_smart.polyA_filtered.STARAligned.out.namesorted.merged.bam
+annotations_file:
+  class: File
+  path: inputs/hg19_mm10_transgenes.refFlat

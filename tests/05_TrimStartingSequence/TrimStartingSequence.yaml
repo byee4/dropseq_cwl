@@ -1,0 +1,7 @@
+#!/usr/bin/env FilterBAM.cwl
+
+input:
+  class: File
+  path: inputs/Barnayard_Original_S3_R-_001.tagCellAndUMIBarcode.small.bam
+output: Barnayard_Original_S3_R-_001.filtered.small.bam
+tag_reject: XQ
