@@ -231,10 +231,6 @@ fi
 #rmdir ${JOB_HOME}/${JOB_NAME}/intermediates??????
 
 
-# Stop printing commands and their arguments as they are executed.
-set +x
-
-
 
 echo
 echo ========================================================================
@@ -272,3 +268,5 @@ echo
 echo Bye!
 echo
 
+# Stop printing commands and their arguments as they are executed.
+set +x

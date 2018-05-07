@@ -9,18 +9,35 @@ requirements:
   - class: StepInputExpressionRequirement
 
 inputs:
+
   investigator:
     type: string
-  run_date:
+  pi_name:
+    type: string
+  sequencing_center:
+    type: string
+  experiment_nickname:
+    type: string
+  experiment_start_date:
+    type: string
+  experiment_summary:
+    type: string
+  sequencing_date:
+    type: string
+  processing_date:
     type: string
   assay_protocol:
+    type: string
+  protocol_description:
+    type: string
+  organism:
     type: string
 
   sample:
     type:
       type: record
       fields:
-        run_id:
+        expt_id:
           type: string
         sample_id:
           type: string
@@ -38,6 +55,17 @@ inputs:
           type: File
         species_reference_refFlat:
           type: File
+        characteristics:
+          type:
+            type: array
+            items:
+              type: record
+              name: characteristics
+              fields:
+                name:
+                  type: string
+                value:
+                  type: string
 
 outputs:
 

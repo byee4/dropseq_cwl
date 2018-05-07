@@ -14,7 +14,7 @@ inputs:
     type:
       type: record
       fields:
-        run_id:
+        expt_id:
            type: string
         sample_id:
           type: string?
@@ -32,6 +32,17 @@ inputs:
           type: File
         species_reference_refFlat:
           type: File
+        characteristics:
+          type:
+            type: array
+            items:
+              type: record
+              name: characteristics
+              fields:
+                name:
+                  type: string
+                value:
+                  type: string
 
 outputs:
   sample_name:
@@ -56,8 +67,8 @@ outputs:
 expression: |
    ${
       return {
-        'sample_name': inputs.sample.run_id + "_" + inputs.sample.sample_id,
-        'initial_sam_file_name': inputs.sample.run_id + "_" + inputs.sample.sample_id + ".sam",
+        'sample_name': inputs.sample.expt_id + "_" + inputs.sample.sample_id,
+        'initial_sam_file_name': inputs.sample.expt_id + "_" + inputs.sample.sample_id + ".sam",
         'read1':inputs.sample.read1,
         'read2':inputs.sample.read2,
         'core_barcodes':inputs.sample.core_barcodes,

@@ -13,9 +13,25 @@ requirements:
 inputs:
   investigator:
     type: string
-  run_date:
+  pi_name:
+    type: string
+  sequencing_center:
+    type: string
+  experiment_nickname:
+    type: string
+  experiment_start_date:
+    type: string
+  experiment_summary:
+    type: string
+  sequencing_date:
+    type: string
+  processing_date:
     type: string
   assay_protocol:
+    type: string
+  protocol_description:
+    type: string
+  organism:
     type: string
 
   samples:
@@ -24,7 +40,7 @@ inputs:
       items:
         type: record
         fields:
-          run_id:
+          expt_id:
             type: string
           sample_id:
             type: string
@@ -42,30 +58,42 @@ inputs:
             type: File
           species_reference_refFlat:
             type: File
-
+          characteristics:
+            type:
+              type: array
+              items:
+                type: record
+                name: characteristics
+                fields:
+                  name:
+                    type: string
+                  value:
+                    type: string
 outputs:
 
 
   ### PREPROCESSING OUTPUTS ###
 
+  # REMOVING DUE TO SIZE CONSTRAINTS
 
-  output_fastq_to_sam:
-    type: File[]
-    outputSource: step_dropseq_count/output_fastq_to_sam
+  # output_fastq_to_sam:
+  #   type: File[]
+  #   outputSource: step_dropseq_count/output_fastq_to_sam
 
 
   ### BARCODE/UMI ASSIGNMENTS ###
 
+  # REMOVING DUE TO SIZE CONSTRAINTS
 
-  output_tag_cell_barcodes:
-    type: File[]
-    outputSource: step_dropseq_count/output_tag_cell_barcodes
+  # output_tag_cell_barcodes:
+  #   type: File[]
+  #   outputSource: step_dropseq_count/output_tag_cell_barcodes
   output_tag_cell_barcodes_summary:
     type: File[]
     outputSource: step_dropseq_count/output_tag_cell_barcodes_summary
-  output_tag_molecular_barcodes:
-    type: File[]
-    outputSource: step_dropseq_count/output_tag_molecular_barcodes
+  # output_tag_molecular_barcodes:
+  #   type: File[]
+  #   outputSource: step_dropseq_count/output_tag_molecular_barcodes
   output_tag_molecular_barcodes_summary:
     type: File[]
     outputSource: step_dropseq_count/output_tag_molecular_barcodes_summary
@@ -73,23 +101,23 @@ outputs:
 
   ### TRIMMING ###
 
+  # REMOVING DUE TO SIZE CONSTRAINTS
 
-  output_trim_5p_primer_sequence:
-    type: File[]
-    outputSource: step_dropseq_count/output_trim_5p_primer_sequence
+  # output_trim_5p_primer_sequence:
+  #   type: File[]
+  #   outputSource: step_dropseq_count/output_trim_5p_primer_sequence
   output_trim_5p_primer_sequence_summary:
     type: File[]
     outputSource: step_dropseq_count/output_trim_5p_primer_sequence_summary
-  output_trim_3p_polya_sequence:
-    type: File[]
-    outputSource: step_dropseq_count/output_trim_3p_polya_sequence
+  # output_trim_3p_polya_sequence:
+  #   type: File[]
+  #   outputSource: step_dropseq_count/output_trim_3p_polya_sequence
   output_trim_3p_polya_sequence_summary:
     type: File[]
     outputSource: step_dropseq_count/output_trim_3p_polya_sequence_summary
 
 
   ### GENOME ALIGNMENTS ###
-
 
   output_star_alignment:
     type: File[]
@@ -107,10 +135,11 @@ outputs:
 
   ### POST PROCESSING ALIGNMENT OUTPUTS ###
 
+  # REMOVING DUE TO SIZE CONSTRAINTS
 
-  output_sort_alignment_queryname:
-    type: File[]
-    outputSource: step_dropseq_count/output_sort_alignment_queryname
+  # output_sort_alignment_queryname:
+  #   type: File[]
+  #   outputSource: step_dropseq_count/output_sort_alignment_queryname
   output_merge_alignment:
     type: File[]
     outputSource: step_dropseq_count/output_merge_alignment
@@ -154,8 +183,16 @@ steps:
     scatter: sample
     in:
       investigator: investigator
-      run_date: run_date
+      pi_name: pi_name
+      sequencing_center: sequencing_center
+      experiment_nickname: experiment_nickname
+      experiment_start_date: experiment_start_date
+      experiment_summary: experiment_summary
+      sequencing_date: sequencing_date
+      processing_date: processing_date
       assay_protocol: assay_protocol
+      protocol_description: protocol_description
+      organism: organism
       sample: samples
     out:
       - output_fastq_to_sam
