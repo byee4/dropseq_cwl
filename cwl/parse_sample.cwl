@@ -20,12 +20,20 @@ inputs:
           type: string?
         read1:
           type: File
+        read1_length:
+          type: int
         read2:
           type: File
+        read2_length:
+          type: int
+        library_prep:
+          type: string
         core_barcodes:
           type: int
         expected_barcodes:
           type: int
+        instrument_model:
+          type: string
         species_genome_dir:
           type: Directory
         species_reference_fasta:

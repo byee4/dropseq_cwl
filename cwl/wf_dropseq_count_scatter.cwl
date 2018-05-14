@@ -11,11 +11,9 @@ requirements:
   - class: ScatterFeatureRequirement
 
 inputs:
-  investigator:
+  assay_protocol:
     type: string
-  pi_name:
-    type: string
-  sequencing_center:
+  contact_email:
     type: string
   experiment_nickname:
     type: string
@@ -23,15 +21,23 @@ inputs:
     type: string
   experiment_summary:
     type: string
-  sequencing_date:
+  extract_protocol_description:
     type: string
-  processing_date:
+  growth_protocol_description:
     type: string
-  assay_protocol:
+  investigator:
     type: string
-  protocol_description:
+  library_construction_protocol:
+    type: string
+  library_strategy:
     type: string
   organism:
+    type: string
+  pi_name:
+    type: string
+  sequencing_center:
+    type: string
+  processing_date:
     type: string
 
   samples:
@@ -46,12 +52,20 @@ inputs:
             type: string
           read1:
             type: File
+          read1_length:
+            type: int
           read2:
             type: File
+          read2_length:
+            type: int
+          library_prep:
+            type: string
           core_barcodes:
             type: int
           expected_barcodes:
             type: int
+          instrument_model:
+            type: string
           species_genome_dir:
             type: Directory
           species_reference_fasta:
@@ -69,6 +83,13 @@ inputs:
                     type: string
                   value:
                     type: string
+  sequencing_center:
+    type: string
+  sequencing_date:
+    type: string
+  treatment_protocol_description:
+    type: string
+
 outputs:
 
 
@@ -182,18 +203,23 @@ steps:
     run: wf_dropseq_count.cwl
     scatter: sample
     in:
-      investigator: investigator
-      pi_name: pi_name
-      sequencing_center: sequencing_center
+      assay_protocol: assay_protocol
+      contact_email: contact_email
       experiment_nickname: experiment_nickname
       experiment_start_date: experiment_start_date
       experiment_summary: experiment_summary
-      sequencing_date: sequencing_date
-      processing_date: processing_date
-      assay_protocol: assay_protocol
-      protocol_description: protocol_description
+      extract_protocol_description: extract_protocol_description
+      growth_protocol_description: growth_protocol_description
+      investigator: investigator
+      library_construction_protocol: library_construction_protocol
+      library_strategy: library_strategy
       organism: organism
+      pi_name: pi_name
+      processing_date: processing_date
       sample: samples
+      sequencing_center: sequencing_center
+      sequencing_date: sequencing_date
+      treatment_protocol_description: treatment_protocol_description
     out:
       - output_fastq_to_sam
       - output_tag_cell_barcodes

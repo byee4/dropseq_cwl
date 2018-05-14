@@ -10,11 +10,9 @@ requirements:
 
 inputs:
 
-  investigator:
+  assay_protocol:
     type: string
-  pi_name:
-    type: string
-  sequencing_center:
+  contact_email:
     type: string
   experiment_nickname:
     type: string
@@ -22,17 +20,22 @@ inputs:
     type: string
   experiment_summary:
     type: string
-  sequencing_date:
+  extract_protocol_description:
     type: string
-  processing_date:
+  growth_protocol_description:
     type: string
-  assay_protocol:
+  investigator:
     type: string
-  protocol_description:
+  library_construction_protocol:
+    type: string
+  library_strategy:
     type: string
   organism:
     type: string
-
+  pi_name:
+    type: string
+  processing_date:
+    type: string
   sample:
     type:
       type: record
@@ -43,12 +46,20 @@ inputs:
           type: string
         read1:
           type: File
+        read1_length:
+          type: int
         read2:
           type: File
+        read2_length:
+          type: int
+        library_prep:
+          type: string
         core_barcodes:
           type: int
         expected_barcodes:
           type: int
+        instrument_model:
+          type: string
         species_genome_dir:
           type: Directory
         species_reference_fasta:
@@ -66,6 +77,12 @@ inputs:
                   type: string
                 value:
                   type: string
+  sequencing_center:
+    type: string
+  sequencing_date:
+    type: string
+  treatment_protocol_description:
+    type: string
 
 outputs:
 

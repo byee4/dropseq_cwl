@@ -1,0 +1,52 @@
+#!/usr/bin/env wf_dropseq_count_scatter.cwl
+{
+  "assay_protocol": "SeqWell",
+  "contact_email": "bay001@ucsd.edu",
+  "experiment_nickname": "expt_01",
+  "experiment_start_date": "2018-01-01",
+  "experiment_summary": "experiment summary",
+  "extract_protocol_description": "extract protocol description",
+  "growth_protocol_description": "growth protocol description",
+  "investigator": "Brian Yee",
+  "library_construction_protocol": "library construction protocol description",
+  "library_strategy": "library strategy",
+  "organism": "Barnyard (HSA+MMU)",
+  "pi_name": "Gene Yeo",
+  "processing_date": "2018-01-01",
+  "sequencing_center": "IGM",
+  "sequencing_date": "2018-01-01",
+  "treatment_protocol_description": "treatment protocol description",
+  "samples": [
+    {
+      "expt_id": "r01",
+      "library_prep": "PolyA select",
+      "sample_id": "s01",
+      "read1": {
+        "path": "inputs/Barnayard_Original_S3_R1_001.fastq.gz",
+        "class": "File"
+      },
+      "read1_length": 22,
+      "read2": {
+        "path": "inputs/Barnayard_Original_S3_R2_001.fastq.gz",
+        "class": "File"
+      },
+      "read2_length": 60,
+      "instrument_model": "Illumina HiSeq 4000",
+      "core_barcodes": 100,
+      "expected_barcodes": 3500,
+      "species_genome_dir": {
+        "path": "hg19mm10_star/",
+        "class": "Directory"
+      },
+      "species_reference_fasta": {
+        "path": "hg19_mm10_transgenes.fasta",
+        "class": "File"
+      },
+      "species_reference_refFlat": {
+        "path": "hg19_mm10_transgenes.refFlat",
+        "class": "File"
+      },
+      "characteristics": []
+    }
+  ]
+}
