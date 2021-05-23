@@ -10,7 +10,9 @@ requirements:
 
 inputs:
 
-  assay_protocol:
+  module:
+    type: string
+  module_version:
     type: string
   contact_email:
     type: string

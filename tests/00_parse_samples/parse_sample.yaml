@@ -1,0 +1,25 @@
+#!/usr/bin/env parse_sample.cwl
+
+sample: 
+  run_id: r01
+  sample_id: s01
+  read1:
+    class: File
+    path: inputs/SRX2556654_1_sub6M.fastq
+  read2:
+    class: File
+    path: inputs/SRX2556654_2_sub6M.fastq 
+  core_barcodes: 100
+  expected_barcodes: 3500
+  species_genome_dir:
+    class: Directory
+    path: inputs/hg19_star
+  species_reference_fasta:
+    class: File
+    path: inputs/hg19.fasta
+  species_reference_refFlat:
+    class: File
+    path: inputs/hg19.refFlat
+  characteristics:
+    - name: organism
+      value: hg19

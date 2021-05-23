@@ -1,0 +1,6 @@
+#!/usr/bin/env CreateSequenceDictionary.cwl
+
+reference:
+  class: File
+  path: inputs/hg19_mm10_transgenes.fasta
+

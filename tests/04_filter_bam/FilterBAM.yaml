@@ -1,0 +1,6 @@
+#!/usr/bin/env FilterBAM.cwl
+
+input:
+  class: File
+  path: inputs/Barnayard_Original_S3_R-_001.tagged1-12.tagged13-20.bam
+tag_reject: XQ

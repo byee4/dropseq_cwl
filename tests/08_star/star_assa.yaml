@@ -1,0 +1,10 @@
+#!/usr/bin/env star.cwl
+
+genomeDir:
+  class: Directory
+  path: inputs/hg19mm10_star
+
+readFilesIn:
+  - read1:
+    class: File
+    path: inputs/4-Assa-CGV_S4_L001_R1_001.tagged1-12.tagged13-20.filtered.trimmed_smart.polyA_filtered.fastq

@@ -11,7 +11,9 @@ requirements:
   - class: ScatterFeatureRequirement
 
 inputs:
-  assay_protocol:
+  module:
+    type: string
+  module_version:
     type: string
   contact_email:
     type: string
@@ -203,7 +205,8 @@ steps:
     run: wf_dropseq_count.cwl
     scatter: sample
     in:
-      assay_protocol: assay_protocol
+      module: module
+      module_version: module_version
       contact_email: contact_email
       experiment_nickname: experiment_nickname
       experiment_start_date: experiment_start_date

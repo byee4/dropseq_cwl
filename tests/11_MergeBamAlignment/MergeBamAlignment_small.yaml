@@ -1,0 +1,11 @@
+#!/usr/bin/env MergeBamAlignment.cwl
+
+reference_sequence:
+  class: File
+  path: inputs/hg19_mm10_transgenes.fasta
+aligned_bam: 
+  class: File
+  path: inputs/Barnayard_Original_S3_R-_001.small.tagged1-12.tagged13-20.filtered.trimmed_smart.polyA_filtered.STARAligned.out.namesorted.bam
+unmapped_bam:
+  class: File
+  path: inputs/Barnayard_Original_S3_R-_001.small.tagged1-12.tagged13-20.filtered.trimmed_smart.polyA_filtered.bam

@@ -1,0 +1,5 @@
+#!/usr/bin/env PolyATrimmer.cwl
+
+input:
+  class: File
+  path: inputs/Barnayard_Original_S3_R-_001.small.tagged1-12.tagged13-20.filtered.trimmed_smart.bam

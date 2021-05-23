@@ -1,0 +1,9 @@
+#!/usr/bin/env TagBamWithReadSequenceExtended.cwl
+
+input:
+  class: File
+  path: inputs/4-Assa-CGV_S4_L001_R1_001.tagged1-12.bam
+base_range: 13-20
+barcoded_read: 1
+tag_name: "XM"
+discard_read: "true"

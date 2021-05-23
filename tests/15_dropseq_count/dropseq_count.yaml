@@ -1,0 +1,27 @@
+#!/usr/bin/env wf_dropseq_count.cwl
+
+investigator: "Brian Yee"
+run_date: "2018-04-12"
+assay_protocol: "seqwell"
+
+speciesGenomeDir:
+  class: Directory
+  path: inputs/hg19mm10_star
+speciesReferenceFasta:
+  class: File
+  path: inputs/hg19_mm10_transgenes.fasta
+speciesReferenceRefFlat:
+  class: File
+  path: inputs/hg19_mm10_transgenes.refFlat
+
+sample: 
+  run_id: r01
+  sample_id: s01
+  read1:
+    class: File
+    path: inputs/Barnayard_Original_S3_R1_001.small.fastq.gz 
+  read2:
+    class: File
+    path: inputs/Barnayard_Original_S3_R2_001.small.fastq.gz 
+  core_barcodes: 100
+  expected_barcodes: 3500

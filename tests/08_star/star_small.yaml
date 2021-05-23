@@ -1,0 +1,10 @@
+#!/usr/bin/env star.cwl
+
+genomeDir:
+  class: Directory
+  path: inputs/hg19mm10_star
+
+readFilesIn:
+  - read1:
+    class: File
+    path: inputs/Barnayard_Original_S3_R-_001.small.tagged1-12.tagged13-20.filtered.trimmed_smart.polyA_filtered.fastq

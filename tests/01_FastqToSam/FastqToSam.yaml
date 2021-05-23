@@ -1,30 +1,10 @@
-#!/usr/bin/env parse_samples.cwl
+#!/usr/bin/env FastqToSam.cwl
 
-samples:
-  -
-    run_id: one
-    sample_id: one_s
-    fastq_dir:
-      class: Directory
-      path: inputs/fastqs/
-    transcriptome:
-      class: Directory
-      path: inputs/refdata-cellranger-hg19-1.2.0/
-  -
-    run_id: two
-    sample_id: two_s
-    fastq_dir:
-      class: Directory
-      path: inputs/fastqs/
-    transcriptome:
-      class: Directory
-      path: inputs/refdata-cellranger-hg19-1.2.0/
-  -
-    run_id: three
-    sample_id: three_s
-    fastq_dir:
-      class: Directory
-      path: inputs/fastqs/
-    transcriptome:
-      class: Directory
-      path: inputs/refdata-cellranger-hg19-1.2.0/
+fastq:
+  class: File
+  path: inputs/Barnayard_Original_S3_R1_001.small.fastq.gz
+fastq2:
+  class: File
+  path: inputs/Barnayard_Original_S3_R2_001.small.fastq.gz
+output: Barnayard_Original_S3_R-_001.small.sam
+sample_name: barnyard_pilot

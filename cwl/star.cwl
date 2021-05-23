@@ -1083,6 +1083,7 @@ inputs:
       '
   limitOutSJcollapsed:
     type: int?
+    default: 5000000
     inputBinding:
       position: 1
       prefix: --limitOutSJcollapsed

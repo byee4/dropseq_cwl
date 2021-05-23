@@ -1,0 +1,9 @@
+#!/usr/bin/env TagBamWithReadSequenceExtended.cwl
+
+input:
+  class: File
+  path: inputs/Barnayard_Original_S3_R-_001.small.tagged1-12.bam
+base_range: 13-20
+barcoded_read: 1
+tag_name: "XM"
+discard_read: "true"

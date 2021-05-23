@@ -1,0 +1,6 @@
+#!/usr/bin/env DigitalExpression.cwl
+
+input: 
+  class: File
+  path: inputs/Barnayard_Original_S3_R-_001.small.tagged1-12.tagged13-20.filtered.trimmed_smart.polyA_filtered.STARAligned.out.namesorted.merged.TaggedGeneExon.cleaned.bam
+num_core_barcodes: 100

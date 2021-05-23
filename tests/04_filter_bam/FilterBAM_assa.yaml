@@ -1,0 +1,6 @@
+#!/usr/bin/env FilterBAM.cwl
+
+input:
+  class: File
+  path: inputs/4-Assa-CGV_S4_L001_R1_001.tagged1-12.tagged13-20.bam
+tag_reject: XQ

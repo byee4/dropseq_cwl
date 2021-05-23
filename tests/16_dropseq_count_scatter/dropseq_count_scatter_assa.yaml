@@ -1,0 +1,61 @@
+#!/usr/bin/env dropseq-runner
+
+investigator: "Brian Yee"
+run_date: "2018-04-16"
+assay_protocol: "seqwell"
+
+speciesGenomeDir:
+  class: Directory
+  path: inputs/hg19mm10_star
+speciesReferenceFasta:
+  class: File
+  path: inputs/hg19_mm10_transgenes.fasta
+speciesReferenceRefFlat:
+  class: File
+  path: inputs/hg19_mm10_transgenes.refFlat
+
+samples:
+  -
+    run_id: "run-01"
+    sample_id: "1-Alex"
+    read1:
+      class: File
+      path: inputs/1-Alex-BS13V_S1_L001_R1_001.fastq.gz
+    read2:
+      class: File
+      path: inputs/1-Alex-BS13V_S1_L001_R2_001.fastq.gz
+    core_barcodes: 2000
+    expected_barcodes: 2000
+  -
+    run_id: "run-01"
+    sample_id: "2-Alex"
+    read1:
+      class: File
+      path: inputs/2-Alex-CGV_S2_L001_R1_001.fastq.gz
+    read2:
+      class: File
+      path: inputs/2-Alex-CGV_S2_L001_R2_001.fastq.gz
+    core_barcodes: 2000
+    expected_barcodes: 2000
+  -
+    run_id: "run-01"
+    sample_id: "3-Assa"
+    read1:
+      class: File
+      path: inputs/3-Assa-BS13V_S3_L001_R1_001.fastq.gz
+    read2:
+      class: File
+      path: inputs/3-Assa-BS13V_S3_L001_R2_001.fastq.gz
+    core_barcodes: 2000
+    expected_barcodes: 2000
+  -
+    run_id: "run-01"
+    sample_id: "4-Assa"
+    read1:
+      class: File
+      path: inputs/4-Assa-CGV_S4_L001_R1_001.fastq.gz
+    read2:
+      class: File
+      path: inputs/4-Assa-CGV_S4_L001_R2_001.fastq.gz
+    core_barcodes: 2000
+    expected_barcodes: 2000
